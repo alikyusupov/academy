@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Widget</title>
+	<style type="text/css">
+		.wrapper{
+			position: relative;
+			min-height: 100vh;
+			max-width: 1280px;
+			margin: 0 auto;
+			font-size:2rem;
+			font-family: helvetica;
+			background-color: black;
+			color: burlywood;
+		}
+		#widget, #widgetBadge{
+			position: fixed;
+			bottom: 10px;
+			right:20px;
+		}
+
+		#widget{
+			background-color: white;
+			display: none;
+			overflow-y: scroll;
+			height: auto;
+			width: 300px;
+		}
+
+		#widgetBadge{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:2px solid wheat;
+			border-radius: 50%;
+			color: white;
+			width: 30px;
+			height: 30px;
+		}
+		ul{
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.list-item{
+			cursor:pointer;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam magna, tincidunt sed urna ac, consectetur tempor tellus. Nulla a porttitor odio. Proin egestas eget massa quis egestas. Aenean sollicitudin sem lorem, a fermentum felis vulputate nec. Sed semper sagittis pellentesque. Proin aliquet odio in vulputate finibus. Vestibulum dictum vitae arcu at volutpat. Mauris mattis eget justo in auctor. Cras sollicitudin imperdiet fermentum. Quisque fermentum enim elit, ac aliquam velit fermentum quis. Ut massa est, placerat vitae sapien eu, pellentesque pellentesque neque. Sed et bibendum leo, ac mollis elit. Donec feugiat mauris nec efficitur semper. Quisque bibendum, dolor volutpat commodo venenatis, arcu ex cursus metus, nec euismod nibh nisl vitae leo. Vivamus gravida at lacus id vehicula. Mauris placerat nec ligula quis ullamcorper.</p>
+
+		<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam commodo eu sapien ut semper. Duis consequat ac urna at hendrerit. Sed eu felis sed purus sollicitudin condimentum hendrerit at neque. Mauris ex ipsum, suscipit laoreet consectetur et, tincidunt at metus. Pellentesque nec quam vitae diam finibus tempor. Nunc justo mauris, efficitur vel aliquam a, hendrerit quis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+		<p>Quisque cursus ligula ut venenatis efficitur. Quisque a mi lacus. Nam tempus tincidunt elit et luctus. Vivamus placerat accumsan diam, nec convallis leo consequat eu. Vestibulum hendrerit dolor eu augue molestie, ac lacinia est posuere. Aenean nec viverra tellus. Duis tellus massa, feugiat vitae diam id, hendrerit vestibulum nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam sagittis maximus suscipit. Praesent tincidunt elit mauris. Pellentesque ultrices ligula vel quam bibendum, sed sollicitudin nibh mattis.</p>
+
+		<p>Proin non ex nec turpis mollis lobortis sit amet sed libero. Praesent quis molestie magna, fermentum molestie magna. Aliquam elementum at dui eget imperdiet. Duis vitae massa vitae nulla ornare luctus at sit amet est. Duis eget lacinia sapien, semper condimentum lacus. Nulla lacinia pulvinar ex, in aliquet velit vulputate porttitor. Suspendisse imperdiet, neque a pulvinar fringilla, mauris risus ultricies augue, eget pellentesque ipsum velit in ex.</p>
+
+		<p>Donec sodales, dolor ac tincidunt malesuada, diam tellus semper enim, nec tincidunt justo nisi nec turpis. Nullam dolor ligula, viverra eget turpis ac, euismod tincidunt odio. Proin sit amet facilisis nulla. Etiam porta magna sit amet lectus semper, eget aliquam velit efficitur. Sed hendrerit convallis orci quis feugiat. Aenean eu tempus velit. Nullam gravida lorem quis egestas semper. Ut sodales mi dui, nec fringilla sapien mattis sed.</p>
+	</div>
+	<div id="widget">
+		<span id="closer">X</span>
+	</div>
+	<div id="widgetBadge">
+		<span id="widgetBadgeValue"></span>
+	</div>
+	<script type="text/javascript" src="/widget.js"></script>
+	<script type="text/javascript">
+
+		const show = function(){
+			widget.style.display = "block";
+			widgetBadge.style.display = "none";
+		}
+
+		const destroy = function(){
+			widget.style.display = "none";
+			widgetBadge.style.display = "flex";
+		}
+
+		closer.addEventListener("click",destroy)
+
+		widgetBadge.addEventListener("click",show)
+
+	</script>
+</body>
+</html>
